@@ -1,0 +1,4 @@
+include:
+  - project: 'rampage/devops/ci'
+    ref: main
+    file: '/action/spring/application.yml'
