@@ -1,0 +1,8 @@
+#creategroup F
+#group F permission set some.permission true
+
+# This is comment.
+#deletegroup F
+
+#creategroup K
+#deletegroup K

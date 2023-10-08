@@ -5,6 +5,29 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
 
-<!--    <changeSet id="001" author="">-->
-<!--    </changeSet>-->
+    <changeSet id="001" author="Aleksey Videman">
+        <createTable tableName="lp_changelog">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+        </createTable>
+        <createTable tableName="lp_command">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="lp_id" type="BIGINT">
+                <constraints foreignKeyName="FK_cmd_lp" referencedTableName="lp_changelog" referencedColumnNames="id" nullable="false"/>
+            </column>
+            <column name="line_number" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="executed_time" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+            <column name="command" type="VARCHAR(256)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createSequence sequenceName="cmd_seq"/>
+    </changeSet>
 </databaseChangeLog>
