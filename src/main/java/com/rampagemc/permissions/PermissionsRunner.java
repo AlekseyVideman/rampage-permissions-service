@@ -27,11 +27,7 @@ public class PermissionsRunner implements ApplicationRunner {
 
             log.info("Migration ran successfully!");
         } catch (RuntimeException e) {
-            log.warn("Disabling service due to failure...");
-            System.out.println(e.getMessage());
-            Arrays.stream(e.getStackTrace()).forEach(System.out::println);
-        } finally {
-            System.exit(1);
+            log.error("Disabling service due to failure...", e);
         }
     }
 }
