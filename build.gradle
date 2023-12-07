@@ -35,7 +35,7 @@ ext {
     mapStructVersion = '1.5.3.Final'
     mapStructLombokVersion = '0.2.0'
     logbookVersion = '3.3.0'
-    backlibVersion = '0.4.0'
+    backlibVersion = '0.4.2'
 }
 
 dependencies {
